@@ -1,5 +1,6 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
+import Footer from '../components/Footer';
 import NewReleases from './NewReleases';
 import Banner from './Banner';
 import UpcomingEvents from './UpcomingEvents';
@@ -21,6 +22,7 @@ const MainContent = () => {
             <UpcomingEvents/>
             <Artists/>
             <MusicSection/>
+            <Footer/>
           </div>
         </div>
       </div>

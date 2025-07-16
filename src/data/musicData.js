@@ -61,6 +61,14 @@ const musicData = {
         { id: 6, title: "Tomake Chai", thumbnail: artist5, audio: tomakechay },
       ],
     },
+    {
+      id: 6,
+      name: "Sunidhi chuhan",
+      image: artist3,
+      songs: [
+        { id: 7, title: "Tomake Chai", thumbnail: artist5, audio: tomakechay },
+      ],
+    },
   ],
 
   languages: [
