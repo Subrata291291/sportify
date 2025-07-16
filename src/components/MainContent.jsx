@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from '../components/Sidebar';
 import NewReleases from './NewReleases';
 import Banner from './Banner';
+import UpcomingEvents from './UpcomingEvents';
 
 const MainContent = () => {
   return (
@@ -14,6 +15,7 @@ const MainContent = () => {
           <div className="col-lg-9">
             <Banner/>
             <NewReleases/>
+            <UpcomingEvents/>
           </div>
         </div>
       </div>

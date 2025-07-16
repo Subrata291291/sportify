@@ -631,7 +631,7 @@ a:hover {
 
 .banner_area .slider_content p {
     color: #fff;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     max-width: 80rem;
     text-align: left;
     font-family: 'Raleway', sans-serif;
@@ -644,9 +644,9 @@ a:hover {
 .buy_now_btn {
     background-color: #25a56a;
     color: #fff;
-    border-radius: 1.5rem;
-    padding: 1rem 4rem;
-    font-size: 2rem;
+    border-radius: 0.5rem;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
     margin-right: 1rem;
     border: 1px solid #25a56a;
     transition: 0.3s;
@@ -903,17 +903,17 @@ a:hover {
     left: 20px;
     min-width: 120px;
     height: 40px;
-    border-radius: 12px;
+    border-radius: 5px;
     background-color: #16151A;
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     color: #fff;
-    font-size: 14px;
+    font-size: 13px;
     z-index: 2;
-    font-weight: 500;
-    padding: 0 15px;
+    font-weight: 400;
+    padding: 0 10px;
     transition: 0.3s;
 }
 .buy_ticket_btn:hover {
@@ -938,7 +938,7 @@ a:hover {
     z-index: 1;
 }
 .upcoming_slider .slick-dots li button:before {
-    font-size: 3rem;
+    font-size: 1rem;
 }
 .upcoming_slider .slick-dots li.slick-active button:before {
     color: #25a56a;
