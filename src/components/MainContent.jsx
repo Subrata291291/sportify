@@ -4,6 +4,8 @@ import NewReleases from './NewReleases';
 import Banner from './Banner';
 import UpcomingEvents from './UpcomingEvents';
 import Artists from './Artists';
+import MusicSection from './MusicSection';
+
 
 const MainContent = () => {
   return (
@@ -18,6 +20,7 @@ const MainContent = () => {
             <NewReleases/>
             <UpcomingEvents/>
             <Artists/>
+            <MusicSection/>
           </div>
         </div>
       </div>
