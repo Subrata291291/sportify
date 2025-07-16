@@ -1,6 +1,7 @@
 import React from 'react';
 import musicData from '../data/musicData';
 import Slider from 'react-slick';
+import { Autoplay } from '@fancyapps/ui';
 
 const Artists = () => {
   const artists = musicData.artists || [];
@@ -8,6 +9,7 @@ const Artists = () => {
   const settings = {
     dots: true,
     arrows: false,
+    autoplay: true,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
@@ -31,16 +33,16 @@ const Artists = () => {
         {artists.map((artist, index) => (
           <div className="slider position-relative" key={index}>
             <div>
-            <a href="#">
-              <div className="slider_pic">
+            <div className="slider_pic">
+              <a href="#">
                 <img src={artist.image} alt={artist.name} />
-              </div>
-              <div className="slider_content">
-                <h3 className="text-truncate">
-                  <a href="#">{artist.name}</a>
-                </h3>
-              </div>
-            </a>
+              </a>
+            </div>
+            <div className="slider_content">
+              <h3 className="text-truncate">
+                <a href="#">{artist.name}</a>
+              </h3>
+            </div>
             </div>
           </div>
         ))}

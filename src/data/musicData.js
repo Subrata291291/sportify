@@ -1,16 +1,17 @@
-import tumhiho from '../assets/music/saiyaara.mp3';
-import channa from '../assets/music/saiyaara.mp3';
-import kalho from '../assets/music/saiyaara.mp3';
 import saiyaara from '../assets/music/saiyaara.mp3';
-import makhna from '../assets/music/saiyaara.mp3';
-import shapeofyou from '../assets/music/saiyaara.mp3';
-import tomakechay from '../assets/music/saiyaara.mp3';
+import hanging from '../assets/music/Hanging.mp3';
+import ordinary from '../assets/music/Ordinary.mp3';
+import brave from '../assets/music/Brave.mp3';
+import clocks from '../assets/music/Clocks.mp3';
+import repeat from '../assets/music/Repeat.mp3';
+import celestial from '../assets/music/Celestial.mp3';
+import telecasted from '../assets/music/Telecasted.mp3';
 
 import music1 from '../assets/images/music1.jpeg';
 import music2 from '../assets/images/music2.png';
 import music5 from '../assets/images/music3.jpg';
 import music6 from '../assets/images/music4.jpeg';
-import channaThumb from '../assets/images/music5.jpeg';
+import music7 from '../assets/images/music5.jpeg';
 
 import artist1 from '../assets/images/artist1.jpg';
 import artist2 from '../assets/images/artist2.jpg';
@@ -25,8 +26,8 @@ const musicData = {
       name: "Arijit Singh",
       image: artist1,
       songs: [
-        { id: 1, title: "Tum Hi Ho", thumbnail: artist1, audio: tumhiho },
-        { id: 2, title: "Channa Mereya", thumbnail: channaThumb, audio: channa },
+        { id: 1, title: "Tum Hi Ho", thumbnail: artist1, audio: hanging },
+        { id: 2, title: "Channa Mereya", thumbnail: music7, audio: ordinary },
       ],
     },
     {
@@ -34,7 +35,7 @@ const musicData = {
       name: "Sonu Nigam",
       image: artist2,
       songs: [
-        { id: 3, title: "Kal Ho Naa Ho", thumbnail: artist2, audio: kalho },
+        { id: 3, title: "Kal Ho Naa Ho", thumbnail: artist2, audio: ordinary },
       ],
     },
     {
@@ -42,7 +43,7 @@ const musicData = {
       name: "Yo Yo Honey Singh",
       image: artist3,
       songs: [
-        { id: 4, title: "Makhna", thumbnail: artist3, audio: makhna },
+        { id: 4, title: "Makhna", thumbnail: artist3, audio: brave },
       ],
     },
     {
@@ -50,7 +51,7 @@ const musicData = {
       name: "Ed Sheeran",
       image: artist4,
       songs: [
-        { id: 5, title: "Shape of You", thumbnail: artist4, audio: shapeofyou },
+        { id: 5, title: "Shape of You", thumbnail: artist4, audio: clocks },
       ],
     },
     {
@@ -58,7 +59,7 @@ const musicData = {
       name: "Kabir Suman",
       image: artist5,
       songs: [
-        { id: 6, title: "Tomake Chai", thumbnail: artist5, audio: tomakechay },
+        { id: 6, title: "Tomake Chai", thumbnail: artist5, audio: repeat },
       ],
     },
     {
@@ -66,7 +67,7 @@ const musicData = {
       name: "Sunidhi chuhan",
       image: artist3,
       songs: [
-        { id: 7, title: "Tomake Chai", thumbnail: artist5, audio: tomakechay },
+        { id: 7, title: "Tomake Chai", thumbnail: artist5, audio: celestial },
       ],
     },
   ],
@@ -80,8 +81,8 @@ const musicData = {
           id: 11,
           title: "Cinematic",
           artist: "AudioPizza",
-          thumbnail: music1,
-          audio: tumhiho,
+          thumbnail: music7,
+          audio: telecasted,
           duration: "2:35",
           rank: 1,
           lastWeekRank: 1,
@@ -91,7 +92,7 @@ const musicData = {
           title: "Adventure",
           artist: "AudioPizza",
           thumbnail: music2,
-          audio: channa,
+          audio: saiyaara,
           duration: "3:37",
           rank: 2,
           lastWeekRank: 1,
@@ -101,7 +102,7 @@ const musicData = {
           title: "Epic Motivational",
           artist: "AudioPizza",
           thumbnail: music5,
-          audio: kalho,
+          audio: hanging,
           duration: "5:30",
           rank: 3,
           lastWeekRank: 15,
@@ -111,7 +112,7 @@ const musicData = {
           title: "Upbeat Rock",
           artist: "AudioPizza",
           thumbnail: music6,
-          audio: makhna,
+          audio: ordinary,
           duration: "3:42",
           rank: 4,
           lastWeekRank: 11,
@@ -120,7 +121,7 @@ const musicData = {
           id: 15,
           title: "Ambient Pop",
           artist: "AudioPizza",
-          thumbnail: channaThumb,
+          thumbnail: music7,
           audio: saiyaara,
           duration: "3:02",
           rank: 5,
@@ -134,45 +135,45 @@ const musicData = {
       songs: [
         {
           id: 16,
-          title: "Got What I Got",
-          artist: "Jason Aldean",
+          title: "Calm Down",
+          artist: "Rema ft. Selena Gomez",
           thumbnail: music1,
-          audio: tumhiho,
+          audio: clocks,
           duration: "2:58",
           rank: 1,
         },
         {
           id: 17,
-          title: "Supalonely",
-          artist: "BENEE Featuring",
+          title: "Shape of You",
+          artist: "Ed Sheeran",
           thumbnail: music2,
-          audio: channa,
+          audio: repeat,
           duration: "3:14",
           rank: 2,
         },
         {
           id: 18,
-          title: "Girls In The Hood",
-          artist: "Megan Thee",
+          title: "Brave",
+          artist: "Mark Karan",
           thumbnail: music5,
-          audio: kalho,
+          audio: celestial,
           duration: "3:21",
           rank: 3,
         },
         {
           id: 19,
-          title: "Got It On Me",
-          artist: "Summer Walker",
+          title: "Hanging Motionless",
+          artist: "Mark Karan",
           thumbnail: music6,
-          audio: makhna,
+          audio: telecasted,
           duration: "3:12",
           rank: 4,
         },
         {
           id: 20,
-          title: "Righteous",
-          artist: "Juice WRLD",
-          thumbnail: channaThumb,
+          title: "Long Distance",
+          artist: "Mark Karan",
+          thumbnail: music7,
           audio: saiyaara,
           duration: "5:04",
           rank: 5,
@@ -188,7 +189,7 @@ const musicData = {
           title: "Got What I Got",
           artist: "Jason Aldean",
           thumbnail: music1,
-          audio: tumhiho,
+          audio: hanging,
           duration: "2:58",
           rank: 1,
           isLive: true,
@@ -198,7 +199,7 @@ const musicData = {
           title: "Supalonely",
           artist: "BENEE Featuring",
           thumbnail: music2,
-          audio: channa,
+          audio: ordinary,
           duration: "59:01",
           rank: 2,
         },
@@ -207,7 +208,7 @@ const musicData = {
           title: "Girls In The Hood",
           artist: "Megan Thee",
           thumbnail: music5,
-          audio: kalho,
+          audio: brave,
           duration: "33:10",
           rank: 3,
         },
@@ -216,7 +217,7 @@ const musicData = {
           title: "Got It On Me",
           artist: "Summer Walker",
           thumbnail: music6,
-          audio: makhna,
+          audio: brave,
           duration: "44:27",
           rank: 4,
         },
@@ -224,8 +225,8 @@ const musicData = {
           id: 25,
           title: "Righteous",
           artist: "Juice WRLD",
-          thumbnail: channaThumb,
-          audio: saiyaara,
+          thumbnail: music7,
+          audio: clocks,
           duration: "51:41",
           rank: 5,
         },

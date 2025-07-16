@@ -1428,6 +1428,9 @@ color: #fff;
   display: flex;
   justify-content: space-between;
 }
+.copyright_area a {
+  color: #25a56a;
+}
 .footer_address1 span  {
   font-size: 1.6rem;
   margin-right: 1rem;
