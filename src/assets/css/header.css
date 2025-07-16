@@ -81,7 +81,13 @@ img {
 		transform: translateY(0px);
 	}
 }
-
+.sidenav_area ul li.active a {
+	color: #25a56a;
+  }
+  
+  .sidenav_area ul li.active svg path {
+	fill: #25a56a;
+  }
 .primary_nav .nav-item .nav-link {
 	color: #fff;
 	display: inline-block;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../assets/images/logo.png';
 import MusicPlayer from './MusicPlayer';
 
@@ -12,6 +12,28 @@ const navItems = [
 ];
 
 const Sidebar = () => {
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => document.getElementById(item.id));
+      const scrollPos = window.scrollY + 150; // offset
+
+      for (let i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+          setActiveSection(navItems[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // initial call
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="sidenav_area d-lg-block d-md-none d-none">
       <a className="navbar-brand" href="#">
@@ -19,19 +41,19 @@ const Sidebar = () => {
       </a>
       <ul>
         {navItems.map((item) => (
-        <li key={item.id}>
-          <a href={`#${item.id}`}>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d={item.iconPath}></path>
-              </svg>
-            </span>
-            {item.label}
-          </a>
-        </li>
-          ))}
+          <li key={item.id} className={activeSection === item.id ? 'active' : ''}>
+            <a href={`#${item.id}`}>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d={item.iconPath}></path>
+                </svg>
+              </span>
+              {item.label}
+            </a>
+          </li>
+        ))}
       </ul>
-      <MusicPlayer/>
+      <MusicPlayer />
     </div>
   );
 };
