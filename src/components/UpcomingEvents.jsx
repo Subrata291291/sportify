@@ -12,31 +12,31 @@ const UpcomingEvents = () => {
         slidesToScroll: 1,
         responsive: [
           {
-            breakpoint: 1400, // XL screens
+            breakpoint: 1399, // XL screens
             settings: {
               slidesToShow: 3,
             },
           },
           {
-            breakpoint: 1200, // LG screens (laptops)
+            breakpoint: 1199, // LG screens (laptops)
             settings: {
               slidesToShow: 3,
             },
           },
           {
-            breakpoint: 992, // MD screens (tablets)
+            breakpoint: 991, // MD screens (tablets)
             settings: {
               slidesToShow: 2,
             },
           },
           {
-            breakpoint: 768, // SM screens (small tablets)
+            breakpoint: 767, // SM screens (small tablets)
             settings: {
               slidesToShow: 2,
             },
           },
           {
-            breakpoint: 576, // XS screens (phones)
+            breakpoint: 575, // XS screens (phones)
             settings: {
               slidesToShow: 1,
             },
@@ -49,7 +49,7 @@ const UpcomingEvents = () => {
     <section className="upcoming_events_area" data-aos="fade-up" id="events">
       <div className="title_area">
         <h4>Upcoming Events</h4>
-        {/* <a href="#">See all <span><i className="fa fa-chevron-right" /></span></a> */}
+        <a href="#">See all <span><i className="fa fa-chevron-right" /></span></a>
       </div>
 
       <div className="upcoming_slider p-0">

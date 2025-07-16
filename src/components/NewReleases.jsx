@@ -24,11 +24,11 @@ const NewReleases = () => {
     <section className="new_realease_area mt-40 mb-40" id="releases" data-aos="fade-up">
       <div className="title_area">
         <h4>New Releases</h4>
-        {/* <a href="#">See all <span><i className="fa fa-chevron-right" /></span></a> */}
+        <a href="#">See all <span><i className="fa fa-chevron-right" /></span></a>
       </div>
       <div className="row">
         {newReleases.map(song => (
-          <div className="col-lg-2 col-md-2 col-4 mb-30" key={song.id}>
+          <div className="col-lg-3 col-xl-2 col-md-3 col-4 mb-30" key={song.id}>
             <div className={`album ${isCurrent(song) ? 'active' : ''}`}>
               <div className="album__cover">
                 <img src={song.thumbnail} alt={song.title} className="w-100" />

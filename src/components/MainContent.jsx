@@ -3,6 +3,7 @@ import Sidebar from '../components/Sidebar';
 import NewReleases from './NewReleases';
 import Banner from './Banner';
 import UpcomingEvents from './UpcomingEvents';
+import Artists from './Artists';
 
 const MainContent = () => {
   return (
@@ -16,6 +17,7 @@ const MainContent = () => {
             <Banner/>
             <NewReleases/>
             <UpcomingEvents/>
+            <Artists/>
           </div>
         </div>
       </div>

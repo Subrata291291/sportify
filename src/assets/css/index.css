@@ -775,6 +775,9 @@ a:hover {
     width: 100%;
     background-color: #000;
 }
+.album__cover img {
+  min-height: 17.2rem;
+}
 .album__title {
     margin-top: 1rem;
 }
@@ -986,9 +989,10 @@ a:hover {
 
 
 .artist_slider .slider {
-    margin: 0rem 1rem 2rem;
+    margin: 0rem 0rem 2rem;
     border-radius: 12px;
     text-align: center;
+    padding: 0rem 1rem;
 }
 .artist_slider .slider img {
     border-radius: 12px;
@@ -1021,7 +1025,7 @@ a:hover {
     z-index: 1;
 }
 .artist_slider .slick-dots li button:before {
-    font-size: 3rem;
+    font-size: 1rem;
 }
 .artist_slider .slick-dots li.slick-active button:before {
     color: #25a56a;
@@ -1456,7 +1460,11 @@ color: #fff;
 }
 }
 
-@media (max-width: 1199px) {}
+@media (max-width: 1199px) {
+  .album__cover img {
+    min-height: 17.2rem;
+  }
+}
 
 @media screen and (min-width: 991px) {
   .container-fluid {
@@ -1476,6 +1484,9 @@ color: #fff;
     width: 100%;
     z-index: 0;
     border-right: inherit;
+}
+.album__cover img {
+  min-height: 18rem;
 }
 .sidenav_area ul {
     padding: 2rem 2rem;
@@ -1507,6 +1518,9 @@ color: #fff;
 @media (max-width: 767px) {
 .offcanvas-header {
     padding:1.2rem;
+}
+.album__cover img {
+  min-height: 13rem;
 }
 .sidenav_area {
     display: block;
