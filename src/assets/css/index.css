@@ -1547,9 +1547,9 @@ color: #fff;
 .sidenav_area {
     display: block;
 }
-#app-cover {
+/* #app-cover {
     position: inherit;
-}
+} */
 .banner_area .slider_content h3 {
     font-size: 4rem;
     line-height: 3rem;
