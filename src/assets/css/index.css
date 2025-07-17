@@ -131,6 +131,11 @@ a:hover {
   width: 88%;
 }
 
+#player-track input[type="range"] {
+  accent-color: #25a56a; 
+}
+
+
 #player-track {
     position: absolute;
     top: 0;

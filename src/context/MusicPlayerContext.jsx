@@ -9,23 +9,27 @@ export const MusicPlayerProvider = ({ children }) => {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const audioRef = useRef(null);
-
   const currentSong = songList[currentIndex] || null;
+
+  // Track current song ID to avoid reloading the same song
+  const previousSongId = useRef(null);
 
   useEffect(() => {
     if (!currentSong?.audio) return;
 
-    // Initialize or update audio
+    // Only update audio source if song changed
     if (!audioRef.current) {
       audioRef.current = new Audio(currentSong.audio);
-    } else {
+      previousSongId.current = currentSong.id;
+    } else if (previousSongId.current !== currentSong.id) {
       audioRef.current.src = currentSong.audio;
+      previousSongId.current = currentSong.id;
     }
 
-    // Set volume and autoplay
+    // Volume setup
     audioRef.current.volume = 1;
 
-    // Play or pause
+    // Play or pause control
     if (isPlaying) {
       audioRef.current.play().catch(err => console.error('Audio play error:', err));
     } else {
@@ -33,21 +37,15 @@ export const MusicPlayerProvider = ({ children }) => {
     }
 
     // Event listeners
-    const handleTimeUpdate = () => {
-      setCurrentTime(audioRef.current.currentTime);
-    };
-
-    const handleLoadedMetadata = () => {
-      setDuration(audioRef.current.duration);
-    };
-
+    const handleTimeUpdate = () => setCurrentTime(audioRef.current.currentTime);
+    const handleLoadedMetadata = () => setDuration(audioRef.current.duration);
     const handleEnded = () => playNext();
 
     audioRef.current.addEventListener('timeupdate', handleTimeUpdate);
     audioRef.current.addEventListener('loadedmetadata', handleLoadedMetadata);
     audioRef.current.addEventListener('ended', handleEnded);
 
-    // Cleanup
+    // Cleanup listeners
     return () => {
       audioRef.current.removeEventListener('timeupdate', handleTimeUpdate);
       audioRef.current.removeEventListener('loadedmetadata', handleLoadedMetadata);
@@ -100,7 +98,7 @@ export const MusicPlayerProvider = ({ children }) => {
         playPrevious,
         togglePlayPause,
         setAudioProgress,
-        isPlayerVisible: !!currentSong, // Useful for UI visibility
+        isPlayerVisible: !!currentSong,
       }}
     >
       {children}
