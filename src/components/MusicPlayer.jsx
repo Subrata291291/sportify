@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { MusicPlayerContext } from '../context/MusicPlayerContext';
 
 const formatTime = (seconds) => {
@@ -12,59 +12,22 @@ const MusicPlayer = () => {
   const {
     currentSong,
     isPlaying,
+    currentTime,
+    duration,
     togglePlayPause,
     playNext,
     playPrevious,
+    setAudioProgress,
+    isPlayerVisible,
   } = useContext(MusicPlayerContext);
 
-  const audioRef = useRef(new Audio());
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
   const [isSeeking, setIsSeeking] = useState(false);
 
-  // Load new song when currentSong changes
-  useEffect(() => {
-    if (!currentSong?.audio) return;
-
-    audioRef.current.src = currentSong.audio;
-    audioRef.current.load();
-
-    const handleLoadedMetadata = () => {
-      setDuration(audioRef.current.duration || 0);
-      if (isPlaying) audioRef.current.play();
-    };
-
-    const handleTimeUpdate = () => {
-      if (!isSeeking) setCurrentTime(audioRef.current.currentTime);
-    };
-
-    const handleEnded = () => playNext();
-
-    audioRef.current.addEventListener('loadedmetadata', handleLoadedMetadata);
-    audioRef.current.addEventListener('timeupdate', handleTimeUpdate);
-    audioRef.current.addEventListener('ended', handleEnded);
-
-    return () => {
-      audioRef.current.removeEventListener('loadedmetadata', handleLoadedMetadata);
-      audioRef.current.removeEventListener('timeupdate', handleTimeUpdate);
-      audioRef.current.removeEventListener('ended', handleEnded);
-    };
-  }, [currentSong]);
-
-  // Toggle play/pause based on `isPlaying`
-  useEffect(() => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      audioRef.current.play().catch(err => console.error('Playback error:', err));
-    } else {
-      audioRef.current.pause();
-    }
-  }, [isPlaying]);
+  if (!isPlayerVisible) return null; // Hide player if no song
 
   const handleSeek = (e) => {
     const seekTime = parseFloat(e.target.value);
-    setCurrentTime(seekTime);
-    audioRef.current.currentTime = seekTime;
+    setAudioProgress(seekTime);
   };
 
   return (
@@ -79,7 +42,6 @@ const MusicPlayer = () => {
             <div>{formatTime(duration)}</div>
           </div>
 
-          {/* PROGRESS BAR */}
           <input
             type="range"
             min="0"

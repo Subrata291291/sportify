@@ -138,7 +138,7 @@ a:hover {
     right: 15px;
     left: 15px;
     padding: 7px 22px 10px 12px;
-    background-color: #212529;
+    background-color: #1f2020;
     border-radius: 15px 15px 0 0;
     transition: 0.3s ease top;
     z-index: 1;
@@ -1223,6 +1223,18 @@ color: #fff;
   padding: 2rem;
   position: relative;
 }
+.blog_slider .slick-dots li.slick-active button:before {
+  color: #25a56a;
+}
+.blog_slider .slick-dots li button:before {
+  font-size: 1rem;
+}
+.blog_area .slick-dots li button:before {
+  color: #fff;
+}
+.blog_slider .slick-dots {
+  bottom: -40px;
+}
 .blog-date {
   background-color: #25a56a;
   max-width: 15rem;
@@ -1520,6 +1532,9 @@ color: #fff;
 @media (max-width: 767px) {
 .offcanvas-header {
     padding:1.2rem;
+}
+.blog_slider .slick-dots {
+  bottom: -7px;
 }
 .album__cover img {
   min-height: 13rem;
