@@ -4,7 +4,7 @@ import AOS from 'aos';
 import { Fancybox } from '@fancyapps/ui';
 import Header from './components/Header';
 import Home from './pages/Home';
-import MainContent from './components/MainContent';
+import Music from './pages/Music';
 
 function App() {
   useEffect(() => {
@@ -16,9 +16,9 @@ function App() {
   return (
     <>
       <Header />
-      <MainContent />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/music" element={<Music />} />
       </Routes>
       </>
   );

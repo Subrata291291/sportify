@@ -4,8 +4,8 @@ import logo from '../assets/images/logo.png';
 
 const Header = () => {
   const navLinks = [
-    { label: 'Profile', path: '/' },
-    { label: 'About Us', path: '/about' },
+    { label: 'Home', path: '/' },
+    { label: 'Music', path: '/music' },
     { label: 'Contact', path: '/contact' },
   ];
 
