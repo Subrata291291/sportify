@@ -38,7 +38,8 @@ const Sidebar = () => {
    const { currentSong } = useContext(MusicPlayerContext);
 
   return (
-    <div className="sidenav_area d-lg-block d-md-none d-none">
+    <>
+      <div className="sidenav_area d-lg-block d-md-none d-none">
       <a className="navbar-brand" href="#">
         <img src={logo} alt="logo" />
       </a>
@@ -56,12 +57,13 @@ const Sidebar = () => {
           </li>
         ))}
       </ul>
-      {currentSong && (
-        <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 999 }}>
-          <MusicPlayer />
-        </div>
-      )}
     </div>
+          {currentSong && (
+            <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 999 }}>
+              <MusicPlayer />
+            </div>
+          )}
+    </>
   );
 };
 
