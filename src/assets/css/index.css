@@ -345,9 +345,9 @@ a:hover {
 }
 
 #album-art.buffering img.active {
-  opacity: 0.8;
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
+  opacity: 1;
+  /* filter: blur(2px);
+  -webkit-filter: blur(2px); */
 }
 
 #album-art.buffering #buffer-box {

@@ -1,17 +1,23 @@
 import saiyaara from '../assets/music/saiyaara.mp3';
-import hanging from '../assets/music/Hanging.mp3';
-import ordinary from '../assets/music/Ordinary.mp3';
-import brave from '../assets/music/Brave.mp3';
+import IshqMein from '../assets/music/Ishq-mein.mp3';
+import LaalPari from '../assets/music/Laal-pari.mp3';
+import Qayamat from '../assets/music/Qayamat.mp3';
 import clocks from '../assets/music/Clocks.mp3';
 import repeat from '../assets/music/Repeat.mp3';
 import celestial from '../assets/music/Celestial.mp3';
 import telecasted from '../assets/music/Telecasted.mp3';
+import popo from '../assets/music/popo.mp3';
 
 import music1 from '../assets/images/music1.jpeg';
 import music2 from '../assets/images/music2.png';
 import music5 from '../assets/images/music3.jpg';
 import music6 from '../assets/images/music4.jpeg';
-import music7 from '../assets/images/music5.jpeg';
+import music7 from '../assets/images/music7.jpg';
+import Laalpari from '../assets/images/music7.jpeg';
+import saiyaaraPic from '../assets/images/saiyaaraPic.jpg';
+import QayamatPic from '../assets/images/QayamatPic.jpg';
+import PoPoPic from '../assets/images/PoPoPic.jpg';
+
 
 import artist1 from '../assets/images/artist1.jpg';
 import artist2 from '../assets/images/artist2.jpg';
@@ -26,8 +32,8 @@ const musicData = {
       name: "Arijit Singh",
       image: artist1,
       songs: [
-        { id: 1, title: "Tum Hi Ho", thumbnail: artist1, audio: hanging },
-        { id: 2, title: "Channa Mereya", thumbnail: music7, audio: ordinary },
+        { id: 1, title: "Tum Hi Ho", thumbnail: artist1, audio: Qayamat },
+        { id: 2, title: "Channa Mereya", thumbnail: music7, audio: Qayamat },
       ],
     },
     {
@@ -35,7 +41,7 @@ const musicData = {
       name: "Sonu Nigam",
       image: artist2,
       songs: [
-        { id: 3, title: "Kal Ho Naa Ho", thumbnail: artist2, audio: ordinary },
+        { id: 3, title: "Kal Ho Naa Ho", thumbnail: artist2, audio: LaalPari },
       ],
     },
     {
@@ -43,7 +49,7 @@ const musicData = {
       name: "Yo Yo Honey Singh",
       image: artist3,
       songs: [
-        { id: 4, title: "Makhna", thumbnail: artist3, audio: brave },
+        { id: 4, title: "Makhna", thumbnail: artist3, audio: IshqMein },
       ],
     },
     {
@@ -79,19 +85,19 @@ const musicData = {
       songs: [
         {
           id: 11,
-          title: "Cinematic",
-          artist: "AudioPizza",
+          title: "Ishq mein",
+          artist: "Housefull-5",
           thumbnail: music7,
-          audio: telecasted,
+          audio: IshqMein,
           duration: "2:35",
           rank: 1,
           lastWeekRank: 1,
         },
         {
           id: 12,
-          title: "Adventure",
-          artist: "AudioPizza",
-          thumbnail: music2,
+          title: "Saiyara",
+          artist: "Saiyara",
+          thumbnail: saiyaaraPic,
           audio: saiyaara,
           duration: "3:37",
           rank: 2,
@@ -99,30 +105,30 @@ const musicData = {
         },
         {
           id: 13,
-          title: "Epic Motivational",
-          artist: "AudioPizza",
-          thumbnail: music5,
-          audio: hanging,
+          title: "Laal Pari",
+          artist: "Housefull-5",
+          thumbnail: Laalpari,
+          audio: LaalPari,
           duration: "5:30",
           rank: 3,
           lastWeekRank: 15,
         },
         {
           id: 14,
-          title: "Upbeat Rock",
-          artist: "AudioPizza",
-          thumbnail: music6,
-          audio: ordinary,
+          title: "Qayamat",
+          artist: "Housefull-5",
+          thumbnail: QayamatPic,
+          audio: Qayamat,
           duration: "3:42",
           rank: 4,
           lastWeekRank: 11,
         },
         {
           id: 15,
-          title: "Ambient Pop",
-          artist: "AudioPizza",
-          thumbnail: music7,
-          audio: saiyaara,
+          title: "The Po Po",
+          artist: "Son Of Sardaar 2",
+          thumbnail: PoPoPic,
+          audio: popo,
           duration: "3:02",
           rank: 5,
           lastWeekRank: 2,
@@ -153,7 +159,7 @@ const musicData = {
         },
         {
           id: 18,
-          title: "Brave",
+          title: "Qayamat",
           artist: "Mark Karan",
           thumbnail: music5,
           audio: celestial,
@@ -162,7 +168,7 @@ const musicData = {
         },
         {
           id: 19,
-          title: "Hanging Motionless",
+          title: "LaalPari Motionless",
           artist: "Mark Karan",
           thumbnail: music6,
           audio: telecasted,
@@ -189,7 +195,7 @@ const musicData = {
           title: "Got What I Got",
           artist: "Jason Aldean",
           thumbnail: music1,
-          audio: hanging,
+          audio: LaalPari,
           duration: "2:58",
           rank: 1,
           isLive: true,
@@ -199,7 +205,7 @@ const musicData = {
           title: "Supalonely",
           artist: "BENEE Featuring",
           thumbnail: music2,
-          audio: ordinary,
+          audio: LaalPari,
           duration: "59:01",
           rank: 2,
         },
@@ -208,7 +214,7 @@ const musicData = {
           title: "Girls In The Hood",
           artist: "Megan Thee",
           thumbnail: music5,
-          audio: brave,
+          audio: Qayamat,
           duration: "33:10",
           rank: 3,
         },
@@ -217,7 +223,7 @@ const musicData = {
           title: "Got It On Me",
           artist: "Summer Walker",
           thumbnail: music6,
-          audio: brave,
+          audio: Qayamat,
           duration: "44:27",
           rank: 4,
         },
