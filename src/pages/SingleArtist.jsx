@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import musicData from '../data/musicData';
+import Footer from '../components/Footer'
 
 const SingleArtist = () => {
   const { id } = useParams();
@@ -9,7 +10,8 @@ const SingleArtist = () => {
   if (!artist) return <div className="container py-5 text-light"><h2>Artist not found</h2></div>;
 
   return (
-    <section className='single-artist-area'>
+    <>
+      <section className='single-artist-area'>
       <div className="container py-5 text-light">
         <div className="row align-items-start">
           {/* Left column: Artist Image */}
@@ -57,6 +59,8 @@ const SingleArtist = () => {
         </div>
       </div>
     </section>
+    <Footer/>
+    </>
   );
 };
 
