@@ -32,8 +32,8 @@ const musicData = {
       name: "Arijit Singh",
       image: artist1,
       songs: [
-        { id: 1, title: "Tum Hi Ho", thumbnail: artist1, audio: Qayamat },
-        { id: 2, title: "Channa Mereya", thumbnail: music7, audio: Qayamat },
+        { id: 1, title: "Qyaamat", thumbnail: QayamatPic, cover: QayamatPic, audio: Qayamat },
+        { id: 2, title: "Ishq Mein", thumbnail: IshqMein, cover: music7, audio: IshqMein },
       ],
     },
     {
@@ -41,7 +41,7 @@ const musicData = {
       name: "Sonu Nigam",
       image: artist2,
       songs: [
-        { id: 3, title: "Kal Ho Naa Ho", thumbnail: artist2, audio: LaalPari },
+        { id: 3, title: "Kal Ho Naa Ho", thumbnail: artist2, cover: QayamatPic, audio: LaalPari },
       ],
     },
     {
@@ -49,7 +49,7 @@ const musicData = {
       name: "Yo Yo Honey Singh",
       image: artist3,
       songs: [
-        { id: 4, title: "Makhna", thumbnail: artist3, audio: IshqMein },
+        { id: 4, title: "Makhna", thumbnail: artist3, cover: QayamatPic, audio: IshqMein },
       ],
     },
     {
@@ -57,7 +57,7 @@ const musicData = {
       name: "Ed Sheeran",
       image: artist4,
       songs: [
-        { id: 5, title: "Shape of You", thumbnail: artist4, audio: clocks },
+        { id: 5, title: "Shape of You", thumbnail: artist4, cover: QayamatPic, audio: clocks },
       ],
     },
     {
@@ -65,7 +65,7 @@ const musicData = {
       name: "Kabir Suman",
       image: artist5,
       songs: [
-        { id: 6, title: "Tomake Chai", thumbnail: artist5, audio: repeat },
+        { id: 6, title: "Tomake Chai", thumbnail: artist5, cover: QayamatPic, audio: repeat },
       ],
     },
     {
@@ -73,7 +73,7 @@ const musicData = {
       name: "Sunidhi chuhan",
       image: artist3,
       songs: [
-        { id: 7, title: "Tomake Chai", thumbnail: artist5, audio: celestial },
+        { id: 7, title: "Tomake Chai", thumbnail: artist5, cover: QayamatPic, audio: celestial },
       ],
     },
   ],

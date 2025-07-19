@@ -1,7 +1,7 @@
 import React from 'react';
 import musicData from '../data/musicData';
 import Slider from 'react-slick';
-import { Autoplay } from '@fancyapps/ui';
+import { Link } from 'react-router-dom';
 
 const Artists = () => {
   const artists = musicData.artists || [];
@@ -26,7 +26,7 @@ const Artists = () => {
     <section className="artist_area mt-60" data-aos="fade-up" id="artists">
       <div className="title_area">
         <h4>Artist</h4>
-        <a href="#">See all <span><i className="fa fa-chevron-right" /></span></a>
+        <Link to={`/artist`}>See All <span><i className="fa fa-chevron-right" /></span></Link>
       </div>
 
       <Slider {...settings} className="artist_slider">
@@ -34,13 +34,13 @@ const Artists = () => {
           <div className="slider position-relative" key={index}>
             <div>
             <div className="slider_pic">
-              <a href="#">
+              <Link to={`/artist/${artist.id}`}>
                 <img src={artist.image} alt={artist.name} />
-              </a>
+              </Link>
             </div>
             <div className="slider_content">
               <h3 className="text-truncate">
-                <a href="#">{artist.name}</a>
+              <Link to={`/artist/${artist.id}`}>{artist.name}</Link>
               </h3>
             </div>
             </div>

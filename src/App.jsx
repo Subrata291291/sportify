@@ -5,6 +5,8 @@ import { Fancybox } from '@fancyapps/ui';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Music from './pages/Music';
+import Artist from './pages/Artist';
+import SingleArtist from './pages/SingleArtist';
 
 function App() {
   useEffect(() => {
@@ -19,6 +21,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/music" element={<Music />} />
+        <Route path="/artist" element={<Artist />} />
+        <Route path="/artist/:id" element={<SingleArtist />} />
       </Routes>
       </>
   );

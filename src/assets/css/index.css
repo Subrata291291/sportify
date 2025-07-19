@@ -1368,7 +1368,9 @@ color: #fff;
 .slider .product {
   margin: 0rem 0.5rem;
 }
-
+.single-artist-area .list-group-item {
+  border: none;
+}
 .footer_logo img {
   max-width: 20rem;
   width: 100%;

@@ -6,12 +6,12 @@ const Header = () => {
   const navLinks = [
     { label: 'Home', path: '/' },
     { label: 'Music', path: '/music' },
-    { label: 'Contact', path: '/contact' },
+    { label: 'Artist', path: '/artist' },
   ];
 
-  const mobileLinks = [
-    'concerts', 'releases', 'events', 'artists', 'music', 'news'
-  ];
+  // const mobileLinks = [
+  //   'concerts', 'releases', 'events', 'artists', 'music', 'news'
+  // ];
 
   return (
     <>
@@ -127,11 +127,11 @@ const Header = () => {
           <div className="offcanvas-body">
             <div className="sidenav_area">
               <ul>
-                {mobileLinks.map((item, idx) => (
+                {navLinks.map((item, idx) => (
                   <li key={idx}>
-                    <Link to={`/${item}`}>
-                      <span></span> {/* Add an icon or SVG if needed */}
-                      {item.charAt(0).toUpperCase() + item.slice(1)}
+                    <Link to={item.path}>
+                      <span></span> {/* Optional: Add an icon or leave empty */}
+                      {item.label}
                     </Link>
                   </li>
                 ))}

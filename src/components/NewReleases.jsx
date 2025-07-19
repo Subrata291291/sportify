@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import musicData from '../data/musicData';
 import { MusicPlayerContext } from '../context/MusicPlayerContext';
 
@@ -24,7 +25,7 @@ const NewReleases = () => {
     <section className="new_realease_area mt-40 mb-40" id="releases" data-aos="fade-up">
       <div className="title_area">
         <h4>New Releases</h4>
-        <a href="#">See all <span><i className="fa fa-chevron-right" /></span></a>
+        <Link to={`/music`}>See All <span><i className="fa fa-chevron-right" /></span></Link>
       </div>
       <div className="row">
         {newReleases.map(song => (
