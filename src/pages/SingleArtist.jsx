@@ -57,9 +57,9 @@ const SingleArtist = () => {
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     </section>
-    <Footer/>
     </>
   );
 };
