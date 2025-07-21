@@ -216,7 +216,7 @@ img {
 	transition: 0.7s;
 }
 .dropdown-menu.mega-menu.shadow.show {
-    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
     -ms-transform: scale(1, 1);
 }
 .dropdown-menu.mega-menu.shadow {
@@ -415,7 +415,14 @@ input:-internal-autofill-selected {
 }
 
 @media (max-width: 767px) {
-
+	.mb-menu {
+		position: sticky;
+		top: 0;
+		background-color: #1C1E24;
+		padding-bottom: 2rem;
+		box-shadow: 2px 4px 1px -5px #000000b3 inset, 0px 1px 10px -2px #fff3 inset;
+		z-index: 1;
+	}
 .primary_nav li a .menu-text {
     text-shadow: none !important;
 }

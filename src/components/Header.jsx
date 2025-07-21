@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
+import musicData from '../data/musicData';
+import { MusicPlayerContext } from '../context/MusicPlayerContext';
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const { playTrack } = useContext(MusicPlayerContext);
   const navigate = useNavigate();
 
   const navLinks = [
@@ -12,13 +16,40 @@ const Header = () => {
     { label: 'Artist', path: '/artist' },
   ];
 
+  const handleSearchChange = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+
+    if (value.trim() === '') {
+      setSearchResults([]);
+      return;
+    }
+
+    const results = [];
+    musicData.artists.forEach((artist) => {
+      artist.songs.forEach((song) => {
+        if (song.title.toLowerCase().includes(value.toLowerCase())) {
+          results.push({ ...song, artist });
+        }
+      });
+    });
+
+    setSearchResults(results);
+  };
+
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-
     const trimmed = searchTerm.trim();
     if (trimmed) {
       navigate(`/search?q=${encodeURIComponent(trimmed)}`);
     }
+  };
+
+  const handleResultClick = (song, artist) => {
+    playTrack(song, artist.songs);
+    navigate(`/artist/${artist.id}`);
+    setSearchTerm('');
+    setSearchResults([]);
   };
 
   return (
@@ -61,19 +92,36 @@ const Header = () => {
                   </li>
                 ))}
 
-                <li>
+                <li className="position-relative">
                   <form className="search_form" onSubmit={handleSearchSubmit}>
                     <input
                       className="search-input"
                       placeholder="Artist, track or music..."
                       type="search"
                       value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
+                      onChange={handleSearchChange}
                     />
                     <button type="submit" className="common_btn">
                       <i className="fa fa-search" aria-hidden="true"></i>
                     </button>
                   </form>
+
+                  {/* Desktop suggestions */}
+                  {searchResults.length > 0 && (
+                    <ul className="list-group position-absolute w-100 mt-1 z-3" style={{ top: '100%', left: 0 }}>
+                      {searchResults.map((item, index) => (
+                        <li
+                          key={index}
+                          className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                          style={{ cursor: 'pointer' }}
+                          onClick={() => handleResultClick(item, item.artist)}
+                        >
+                          <span>{item.title}</span>
+                          <small className="text-muted">{item.artist.name}</small>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               </ul>
             </div>
@@ -145,17 +193,34 @@ const Header = () => {
               </ul>
 
               {/* Mobile Search */}
-              <form className="search_form mt-3" onSubmit={handleSearchSubmit}>
+              <form className="search_form mt-3 position-relative" onSubmit={handleSearchSubmit}>
                 <input
                   className="search-input"
                   placeholder="Search..."
                   type="search"
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onChange={handleSearchChange}
                 />
                 <button type="submit" className="common_btn">
                   <i className="fa fa-search" aria-hidden="true"></i>
                 </button>
+
+                {/* Mobile suggestions */}
+                {searchResults.length > 0 && (
+                  <ul className="list-group position-absolute w-100 mt-1 z-3" style={{ top: '100%', left: 0 }}>
+                    {searchResults.map((item, index) => (
+                      <li
+                        key={index}
+                        className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => handleResultClick(item, item.artist)}
+                      >
+                        <span>{item.title}</span>
+                        <small className="text-muted">{item.artist.name}</small>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </form>
             </div>
           </div>
