@@ -33,7 +33,7 @@ const musicData = {
       image: artist1,
       songs: [
         { id: 1, title: "Qyaamat", thumbnail: QayamatPic, cover: QayamatPic, audio: Qayamat },
-        { id: 2, title: "Ishq Mein", thumbnail: IshqMein, cover: music7, audio: IshqMein },
+        { id: 2, title: "Ishq Mein", thumbnail: music7, cover: music7, audio: IshqMein },
       ],
     },
     {

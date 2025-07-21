@@ -1,17 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 
 const Header = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
   const navLinks = [
     { label: 'Home', path: '/' },
     { label: 'Music', path: '/music' },
     { label: 'Artist', path: '/artist' },
   ];
 
-  // const mobileLinks = [
-  //   'concerts', 'releases', 'events', 'artists', 'music', 'news'
-  // ];
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+
+    const trimmed = searchTerm.trim();
+    if (trimmed) {
+      navigate(`/search?q=${encodeURIComponent(trimmed)}`);
+    }
+  };
 
   return (
     <>
@@ -54,15 +62,14 @@ const Header = () => {
                 ))}
 
                 <li>
-                  <form className="search_form" method="GET" action="#">
+                  <form className="search_form" onSubmit={handleSearchSubmit}>
                     <input
                       className="search-input"
                       placeholder="Artist, track or music..."
                       type="search"
-                      name="s"
-                      id="search"
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
                     />
-                    <input type="hidden" name="post_type" value="product" />
                     <button type="submit" className="common_btn">
                       <i className="fa fa-search" aria-hidden="true"></i>
                     </button>
@@ -130,12 +137,26 @@ const Header = () => {
                 {navLinks.map((item, idx) => (
                   <li key={idx}>
                     <Link to={item.path}>
-                      <span></span> {/* Optional: Add an icon or leave empty */}
+                      <span></span>
                       {item.label}
                     </Link>
                   </li>
                 ))}
               </ul>
+
+              {/* Mobile Search */}
+              <form className="search_form mt-3" onSubmit={handleSearchSubmit}>
+                <input
+                  className="search-input"
+                  placeholder="Search..."
+                  type="search"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                <button type="submit" className="common_btn">
+                  <i className="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
             </div>
           </div>
         </div>
